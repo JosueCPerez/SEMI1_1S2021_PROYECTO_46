@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPC</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+
+</head>
+
+<body>
+    <!-- Start header -->
+    <header class="top-navbar">
+        <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #07070767;">
+            <div class="container">
+                <img src="images/logo.png" width="100" height="120" class="d-inline-block align-top" alt="" />
+
+                <ul class="navbar-nav navbar-light">
+                    <li class="nav-item active"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#registro">Registro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Start slides -->
+    <div id="slides" class="cover-slides">
+        <ul class="slides-container">
+            <li class="text-left">
+                <img src="images/slider-03.jpg" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1 class="m-b-20"><strong>Welcome To</strong> <br>
+                                <div class="texto">
+                                    <Great+Vibes>Tout le monde peut coisiner</Great+Vibes>
+                                </div>
+                            </h1>
+                            <p class="m-b-40">Create, enjoy and share your favorite dishes and recipes with more foodies
+                                like you.</p>
+
+                        </div>
+                        <div class="col-md-1">
+
+                        </div>
+                        <div class="col-md-5">
+                            <form class="row g-3">
+                                <div class="col-md-10">
+                                    <h2>Inicio de sesión</h2>
+                                </div>
+                                <div class="col-12">
+                                    <label for="inputEmail4" class="form-label">UserName</label>
+                                    <input type="email" class="form-control" id="username_sigin">
+                                </div>
+                                <div class="col-12">
+                                    <label for="inputPassword4" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password_sigin">
+                                </div>
+
+                                <div class="container">
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <button type="submit" class="btn btn-lg btn-circle btn-outline-new-white"
+                                                onclick="ir_verfotos()">Iniciar
+                                                sesión</button>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <a class="btn btn-lg btn-circle btn-outline-new-white" href="login_webcam.html">Iniciar con webcam</a>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+    </div>
+    </li>
+    </ul>
+
+
+    </div>
+    <!-- End slides -->
+
+    <!-- Start registro -->
+    <a name="registro"></a>
+    <div class="all-page-title page-breadcrumb">
+
+        <div class="container text-center">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Registro</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="reservation-box">
+        <div class="container">
+
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-7">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" class="form" action="" method="post">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="username" class="text-dark">Username:</label><br>
+                                        <input type="text" name="username" id="username" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="password" class="text-dark">Nombre:</label><br>
+                                        <input type="text" name="name" id="name" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="password" class="text-dark">Contraseña:</label><br>
+                                        <input type="password" name="password" id="password" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="password" class="text-dark">Confirmar Contraseña:</label><br>
+                                        <input type="password" name="password_confirm" id="password_confirm"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <div>
+                                    <br>
+                                    <input id="captura" type="button" name="submit"
+                                        class="btn btn-outline-success btn-lg" onclick="registrar()" value="Registrar">
+                                </div>
+
+
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="login-column" class="col-md-3">
+                    <div id="file-preview-zone">
+                    </div>
+                    <div id="divFileUpload">
+                        <input id="file-upload" class="btn btn-outline-success btn-short" type="file"
+                            accept="image/*" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End registro -->
+
+    <!-- End All Pages -->
+
+    <!-- Start Footer -->
+    <footer class="footer-area bg-f">
+        <div class="container">
+            <div class="row">
+                <div class=" col-15">
+                    <h3>About Us</h3>
+                    <p>TPC es una aplicación que permite tener un asistente para todo amante de la cocina con la cual
+                        puede compartir
+                        sus platillos junto con recetas y fotografias creando asi una gran comunidad de deliciosos
+                        platillos.
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(247, 246, 245, 0.705);">
+            © 2021 Copyright:
+            <a class="text-dark">TPC.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- End Footer -->
+    <!-- ALL JS FILES -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/jquery.superslides.min.js"></script>
+    <script src="js/images-loded.min.js"></script>
+    <script src="js/isotope.min.js"></script>
+    <script src="js/baguetteBox.min.js"></script>
+    <script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

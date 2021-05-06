@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+.texto {
+    font-family: 'Great Vibes', cursive;
+}
+
+.row .g-3{
+    background-color: rgba(233, 227, 227, 0.452);
+    border-radius: 7px;
+    color: rgb(7, 7, 7);
+}
+
+.cover-slides h2{
+	font-family: 'Rubik', sans-serif;
+	font-weight: 400;
+	font-size: 40px;
+	color: #fff;
+}
+
+.img2{
+    border-radius: 17px;
+}

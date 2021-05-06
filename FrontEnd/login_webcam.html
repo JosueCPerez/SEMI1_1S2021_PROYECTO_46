@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>TPC</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+   
+</head>
+<style>
+    #webcam {
+        width: 400px;
+        height: 400px;
+        border: 1px solid whitesmoke;
+    }
+</style>
+
+<body>
+
+    <div id="login">
+        <h1 class="text-center text-white pt-5">Ugram</h1>
+        <div class="container">
+            <center>
+                <br>
+                <video id="webcam" autoplay playsinline width="400" height="400"></video>
+                <canvas id="canvas" class="d-none"></canvas>
+                <audio id="snapSound" src="audio/snap.wav" preload="auto"></audio>
+                <br>
+                <br>
+                <input id="take_snapshots" type="button" name="Take Picture" class="btn btn-outline-success btn-lg" onclick="take()" value="Take Picture">
+            </center>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    const webcamElement = document.getElementById('webcam');
+    const canvasElement = document.getElementById('canvas');
+    const snapSoundElement = document.getElementById('snapSound');
+    const webcam = new Webcam(webcamElement, 'user', canvasElement, snapSoundElement);
+
+    webcam.start()
+        .then(result => {
+            console.log("webcam started");
+        })
+        .catch(err => {
+            console.log(err);
+        });
+
+    function take() {
+        var picture = webcam.snap();
+        webcam.stop();
+        login_web(picture);
+    }
+</script>
+<script src="scripts.js"></script>
+
+</html>
