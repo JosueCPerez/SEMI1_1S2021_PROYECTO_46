@@ -20,9 +20,12 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
 
 </head>
 
@@ -33,49 +36,43 @@
                 <img src="images/logo.png" width="0" height="0" class="d-inline-block align-top" alt="" />
 
                 <ul class="navbar-nav navbar-light">
-                    <li class="nav-item active"><a class="nav-link" href="index.html">Subir receta</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#index.html"">Cerrar sesion</a></li>
-                    
+                    <li class="nav-item active"><a class="nav-link" href="subirfoto.html">Subir receta</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="index.html">Cerrar Sesion</a></li>
+
                 </ul>
             </div>
         </nav>
     </header>
 
-<!-- Start All Pages -->
-<div class="all-page-title page-breadcrumb">
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-lg-2">
-                <img src="C:/Users/Josue/Pictures/prueba_perfil.png " class="img2" id="img_user" alt=""
-                        width="150" height="200">
-            </div>
-            <div class="col-lg-8">
-                    <p  id="label_user" class="text-light"></p>
+    <!-- Start All Pages -->
+    <div class="all-page-title page-breadcrumb">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-2">
+                    <img src="C:/Users/Josue/Pictures/prueba_perfil.png " class="img2" id="img_user" alt="" width="150"
+                        height="200">
+                </div>
+                <div class="col-lg-8">
+                    <p id="label_user" class="text-light"></p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <div class="container">
         <br>
         <div class="container">
             <div id="login-row" class="row align-items-center">
-                <div  class="col-2">
-                        <input id="captura" type="button" name="submit" class="btn btn-success" onclick="ir_subirfoto()"
-                            value="Subir foto">
+                <div class="col-8">
+                    <input id="captura" type="button" name="submit" class="btn btn-success" onclick="ir_subirfoto()"
+                        value="Subir foto">
                 </div>
-                    <div class="col-2">
-                        <input id="captura" type="button" name="submit" class="btn btn-success"
-                            onclick="ir_editaralbum()" value="Editar Albumes">
 
-                    </div>
-                    <div class="col-2">
-                        <input id="captura" type="button" name="submit" class="btn btn-warning" onclick="ir_inicio()"
-                            value="Regresar">
-                    </div>
-                    <br>
+                <br>
+                <br>
+                <br>
                 <div class="col-md-10">
-                    
+
 
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     </ul>
@@ -90,12 +87,14 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Translation</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="limpiar()" aria-label="Close"></button>
+                        <h5 class="modal-title" id="exampleModalLabel">Receta</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="limpiar()"
+                            aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <label for="staticEmail" class="col-form-label">Source language</label>
-                        <textarea id="texto_traducir" class="form-control" aria-label="With textarea" readonly></textarea>
+                        <textarea id="texto_traducir" class="form-control" aria-label="With textarea"
+                            readonly></textarea>
                         <br>
                         <label for="staticEmail" class="col-form-label">Target language</label>
                         <textarea id="traducido" class="form-control" aria-label="With textarea"></textarea>
@@ -107,16 +106,19 @@
                             <option value="fr">French</option>
                             <option value="ja">Japanese</option>
                             <option value="it">Italian</option>
-                          </select>
+                        </select>
                         <button type="button" class="btn btn-primary" onclick="trandu()">Translate</button>
                     </div>
                 </div>
             </div>
         </div>
+        <br>
+        <br>
     </div>
 
-    </div>
+
     <footer class="footer-area bg-f">
+
         <div class="container">
             <div class="row">
                 <div class=" col-15">

@@ -19,3 +19,10 @@
 .img2{
     border-radius: 17px;
 }
+
+.card-text{
+    font-size:19px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

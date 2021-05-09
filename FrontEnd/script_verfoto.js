@@ -45,12 +45,19 @@ function getFotos() {
         var contenido = "";
         photos_json.Items.forEach(element => {
             contenido += '<li class="nav-item" role="presentation">';
-            if (count == 0)
+            
+            if(element.name.S === "Profile"){
+                
+            }else{
+                if (count == 0)
                 contenido += '<button class="nav-link active" id="pills-' + element.id_album.S + '-tab" data-bs-toggle="pill" data-bs-target="#' + element.name.S + '" type="button" role="tab" aria-controls="pills-' + element.name.S + '" aria-selected="true">' + element.name.S + '</button>';
             else
                 contenido += '<button class="nav-link" id="pills-' + element.id_album.S + '-tab" data-bs-toggle="pill" data-bs-target="#' + element.name.S + '" type="button" role="tab" aria-controls="pills-' + element.name.S + '" aria-selected="false">' + element.name.S + '</button>';
             contenido += '</li>';
             count++;
+            }
+
+            
         });
         document.getElementById("pills-tab").innerHTML = contenido;
     };
@@ -76,104 +83,111 @@ function getFotos() {
         var count = 0;
         var contenido = "";
         document.getElementById("pills-tabContent").innerHTML = "";
+        
         for (imagen of lista_imagenes) {
             //console.log(imagen);
             imagen_info = imagen.split(";");
             album = imagen_info[0];
-
+            
+            
             img_name = imagen_info[1];
             img_desc = imagen_info[2];
             img_src = imagen_info[3];
+            
+            if(album =="Profile"){
 
-            if (temp_album != album) {
-                temp_album = album;
-                if (primero == true) {
-                    primero = false;
-                    count = 0;
-                    contenido = '<div class="tab-pane fade show active" id="' + temp_album + '" role="tabpanel" aria-labelledby="pills-' + temp_album + '-tab">';
-                    contenido += '<div class="row" id="tags">';
-                    contenido += '<div class="col-sm-4">';
-                    contenido += '<div class="card" style="width: 18rem;">';
-                    contenido += '<img src="' + img_src + '" class="card-img-top" alt="' + img_name + '">';
-                    contenido += '<div class="card-body">';
-                    contenido += '<h5 class="card-title">' + img_name + '</h5>';
-                    contenido += '<p id="' + temp_album + img_name + '" class="card-text">' + img_desc + '</p>';
-                    contenido += '<input id="captura" type="button" name="submit" class="btn btn-primary" onclick="ir_traducir(\'' + temp_album + img_name + '\')" value="Traducir">';
-                    contenido += '</div>';
-                    contenido += '</div>';
-                    contenido += '</div>';
-                } else {
-                    if (count == 2) {
+            }else{
+                if (temp_album != album) {
+                    temp_album = album;
+                    if (primero == true) {
                         primero = false;
                         count = 0;
-                        contenido += '</div>';
-                        contenido += '<div class="tab-pane fade" id="' + temp_album + '" role="tabpanel" aria-labelledby="pills-' + temp_album + '-tab">';
+                        contenido = '<div class="tab-pane fade show active" id="' + temp_album + '" role="tabpanel" aria-labelledby="pills-' + temp_album + '-tab">';
                         contenido += '<div class="row" id="tags">';
                         contenido += '<div class="col-sm-4">';
                         contenido += '<div class="card" style="width: 18rem;">';
-                        contenido += '<img src="' + img_src + '" class="card-img-top" alt="' + img_name + '">';
+                        contenido += '<img src="' + img_src + '" class="card-img-top" alt="' + img_name + '"  width="100" height="170">';
                         contenido += '<div class="card-body">';
                         contenido += '<h5 class="card-title">' + img_name + '</h5>';
-                        contenido += '<p id="' + temp_album + img_name + '" class="card-text">' + img_desc + '</p>';
-                        contenido += '<input id="captura" type="button" name="submit" class="btn btn-primary" onclick="ir_traducir(\'' + temp_album + img_name + '\')" value="Traducir">';
+                        contenido += '<p id="' + temp_album + img_name + '" class="card-text" >' + img_desc + '</p>';
+                        contenido += '<input id="captura" type="button" name="submit" class="btn btn-primary" onclick="ir_traducir(\'' + temp_album + img_name + '\')" value="Ver más">';
                         contenido += '</div>';
                         contenido += '</div>';
                         contenido += '</div>';
                     } else {
-                        primero = false;
+                        if (count == 2) {
+                            primero = false;
+                            count = 0;
+                            contenido += '</div>';
+                            contenido += '<div class="tab-pane fade" id="' + temp_album + '" role="tabpanel" aria-labelledby="pills-' + temp_album + '-tab">';
+                            contenido += '<div class="row" id="tags">';
+                            contenido += '<div class="col-sm-4">';
+                            contenido += '<div class="card" style="width: 18rem;">';
+                            contenido += '<img src="' + img_src + '" class="card-img-top" alt="' + img_name + ' "  width="100" height="170">';
+                            contenido += '<div class="card-body">';
+                            contenido += '<h5 class="card-title">' + img_name + '</h5>';
+                            contenido += '<p id="' + temp_album + img_name + '" class="card-text">' + img_desc + '</p>';
+                            contenido += '<input id="captura" type="button" name="submit" class="btn btn-primary" onclick="ir_traducir(\'' + temp_album + img_name + ', '+img_src+'\')" value="Ver más">';
+                            contenido += '</div>';
+                            contenido += '</div>';
+                            contenido += '</div>';
+                        } else {
+                            primero = false;
+                            count = 0;
+                            contenido += '</div>';
+                            contenido += '</div>';
+                            contenido += '<div class="tab-pane fade" id="' + temp_album + '" role="tabpanel" aria-labelledby="pills-' + temp_album + '-tab">';
+                            contenido += '<div class="row" id="tags">';
+                            contenido += '<div class="col-sm-4">';
+                            contenido += '<div class="card" style="width: 18rem;">';
+                            contenido += '<img src="' + img_src + '" class="card-img-top" alt="' + img_name + '" width="100" height="170">';
+                            contenido += '<div class="card-body">';
+                            contenido += '<h5 class="card-title">' + img_name + '</h5>';
+                            contenido += '<p id="' + temp_album + img_name + '" class="card-text">' + img_desc + '</p>';
+                            contenido += '<input id="captura" type="button" name="submit" class="btn btn-primary" onclick="ir_traducir(\'' + temp_album + img_name +  '\')" value="Ver más">';
+                            contenido += '</div>';
+                            contenido += '</div>';
+                            contenido += '</div>';
+                        }
+    
+                    }
+                } else {
+                    if (count == 2) {
                         count = 0;
                         contenido += '</div>';
-                        contenido += '</div>';
-                        contenido += '<div class="tab-pane fade" id="' + temp_album + '" role="tabpanel" aria-labelledby="pills-' + temp_album + '-tab">';
                         contenido += '<div class="row" id="tags">';
                         contenido += '<div class="col-sm-4">';
                         contenido += '<div class="card" style="width: 18rem;">';
-                        contenido += '<img src="' + img_src + '" class="card-img-top" alt="' + img_name + '">';
+                        contenido += '<img src="' + img_src + '" class="card-img-top" alt="' + img_name + '" width="100" height="170">';
                         contenido += '<div class="card-body">';
                         contenido += '<h5 class="card-title">' + img_name + '</h5>';
                         contenido += '<p id="' + temp_album + img_name + '" class="card-text">' + img_desc + '</p>';
-                        contenido += '<input id="captura" type="button" name="submit" class="btn btn-primary" onclick="ir_traducir(\'' + temp_album + img_name + '\')" value="Traducir">';
+                        contenido += '<input id="captura" type="button" name="submit" class="btn btn-primary" onclick="ir_traducir(\'' + temp_album + img_name + '\')" value="Ver mas">';
+                        contenido += '</div>';
+                        contenido += '</div>';
+                        contenido += '</div>';
+                    } else {
+                        count++;
+                        contenido += '<div class="col-sm-4">';
+                        contenido += '<div class="card" style="width: 18rem;">';
+                        contenido += '<img src="' + img_src + '" class="card-img-top" alt="' + img_name + '" width="100" height="170">';
+                        contenido += '<div class="card-body">';
+                        contenido += '<h5 class="card-title">' + img_name + '</h5>';
+                        contenido += '<p id="' + temp_album + img_name + '" class="card-text">' + img_desc + '</p>';
+                        contenido += '<input id="captura" type="button" name="submit" class="btn btn-primary" onclick="ir_traducir(\'' + temp_album + img_name + '\')" value="Ver mas">';
                         contenido += '</div>';
                         contenido += '</div>';
                         contenido += '</div>';
                     }
-
-                }
-            } else {
-                if (count == 2) {
-                    count = 0;
-                    contenido += '</div>';
-                    contenido += '<div class="row" id="tags">';
-                    contenido += '<div class="col-sm-4">';
-                    contenido += '<div class="card" style="width: 18rem;">';
-                    contenido += '<img src="' + img_src + '" class="card-img-top" alt="' + img_name + '">';
-                    contenido += '<div class="card-body">';
-                    contenido += '<h5 class="card-title">' + img_name + '</h5>';
-                    contenido += '<p id="' + temp_album + img_name + '" class="card-text">' + img_desc + '</p>';
-                    contenido += '<input id="captura" type="button" name="submit" class="btn btn-primary" onclick="ir_traducir(\'' + temp_album + img_name + '\')" value="Traducir">';
-                    contenido += '</div>';
-                    contenido += '</div>';
-                    contenido += '</div>';
-                } else {
-                    count++;
-                    contenido += '<div class="col-sm-4">';
-                    contenido += '<div class="card" style="width: 18rem;">';
-                    contenido += '<img src="' + img_src + '" class="card-img-top" alt="' + img_name + '">';
-                    contenido += '<div class="card-body">';
-                    contenido += '<h5 class="card-title">' + img_name + '</h5>';
-                    contenido += '<p id="' + temp_album + img_name + '" class="card-text">' + img_desc + '</p>';
-                    contenido += '<input id="captura" type="button" name="submit" class="btn btn-primary" onclick="ir_traducir(\'' + temp_album + img_name + '\')" value="Traducir">';
-                    contenido += '</div>';
-                    contenido += '</div>';
-                    contenido += '</div>';
                 }
             }
+            
         }
         document.getElementById("pills-tabContent").innerHTML = contenido;
     };
 }
 
-function ir_traducir(texto) {
+function ir_traducir(texto ) {
     var send_text = document.getElementById(texto).textContent;
     document.getElementById('texto_traducir').innerText = send_text;
     $('#exampleModal').modal('show');
